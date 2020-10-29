@@ -3,4 +3,4 @@ This chrome extension detects whether a Youtube video is a music video, if so it
 
 ## Process
 
-I did an inspect on the webpage and check what are the Ids and class names of the certain button or element that I need to programmatically click on.
+I did an inspect on the webpage and manually check what are the Ids and class names of the certain button or elements that I need to programmatically click on.
