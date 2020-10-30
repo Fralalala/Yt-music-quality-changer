@@ -36,14 +36,12 @@ setTimeout(() => {
 
   let isMusicByDescription = regex.test(videoDescription);
 
-  let adSkipBtn = document.getElementsByClassName(
-    "ytp-ad-skip-button-slot"
-  );
+  let adSkipBtn = document.getElementsByClassName("ytp-ad-skip-button-slot");
 
   const isAdOnDisplay = adSkipBtn.length != 0;
 
   if (isAdOnDisplay) {
-    adSkipBtn = adSkipBtn[0].firstChild.firstChild
+    adSkipBtn = adSkipBtn[0].firstChild.firstChild;
 
     adBtn.click();
   }
@@ -60,20 +58,21 @@ setTimeout(() => {
 setInterval;
 
 const setQuality = (...args) => {
-  console.log(args.includes(true));
-  let btn = document.getElementsByClassName("ytp-settings-button")[0]; //settings button
+  if (args.includes(true)) {
+    let btn = document.getElementsByClassName("ytp-settings-button")[0]; //settings button
 
-  btn.click();
+    btn.click();
 
-  let btn2 = document.getElementsByClassName("ytp-menuitem"); //popup from settings
-  btn2 = btn2[btn2.length - 1];
+    let btn2 = document.getElementsByClassName("ytp-menuitem"); //popup from settings
+    btn2 = btn2[btn2.length - 1];
 
-  btn2.click();
+    btn2.click();
 
-  let btn3 = document.getElementsByClassName("ytp-popup")[1].lastChild // popup from popup which contains the quality
-    .lastChild;
+    let btn3 = document.getElementsByClassName("ytp-popup")[1].lastChild // popup from popup which contains the quality
+      .lastChild;
 
-  btn3 = btn3.childNodes[btn3.childElementCount - 2]; // -2 of len since 144p is always 2nd to the last
+    btn3 = btn3.childNodes[btn3.childElementCount - 2]; // -2 of len since 144p is always 2nd to the last
 
-  btn3.click();
+    btn3.click();
+  }
 };
