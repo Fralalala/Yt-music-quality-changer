@@ -28,13 +28,13 @@ setTimeout(() => {
 
   let regex = /lyrics|song|music|lyric/i;
 
-  let isMusicBySecondDescription = isSecondDescriptionPresent
-    ? regex.test(videoLowerDescription)
-    : false;
-
   let isMusicByTitle = regex.test(videoTitle);
 
   let isMusicByDescription = regex.test(videoDescription);
+
+  let isMusicBySecondDescription = isSecondDescriptionPresent
+    ? regex.test(videoLowerDescription)
+    : false;
 
   let adSkipBtn = document.getElementsByClassName("ytp-ad-skip-button-slot");
 
@@ -43,7 +43,7 @@ setTimeout(() => {
   if (isAdOnDisplay) {
     adSkipBtn = adSkipBtn[0].firstChild.firstChild;
 
-    adBtn.click();
+    adSkipBtn.click(); 
   }
 
   setTimeout(() => {
